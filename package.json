@@ -1,0 +1,40 @@
+{
+  "name": "luca_cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "s3bucket": "npx s3rver --directory ./s3data --port 9000 > s3rver.log 2>&1 &",
+    "stop-s3bucket": "kill $(lsof -t -i:9000)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maukka/luca_cms.git"
+  },
+  "keywords": [],
+  "author": "Markus Veijola",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/maukka/luca_cms/issues"
+  },
+  "homepage": "https://github.com/maukka/luca_cms#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1147.0",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "multer": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
